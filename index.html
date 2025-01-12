@@ -531,6 +531,34 @@
             </div>
         </div>
 
+        <div id="scrollToTop" class="btn btn-danger rounded-circle d-none" onclick="scrollToTop()">
+            <i class="bi bi-arrow-up"></i>
+            <style>
+                #scrollToTop {
+                    position: fixed;
+                    bottom: 20px;
+                    right: 20px;
+                    z-index: 1030;
+                }
+            </style>
+            <script>
+                // Show or hide the button based on scroll position
+                window.addEventListener('scroll', () => {
+                    const button = document.getElementById('scrollToTop');
+                    if (window.scrollY > 100) {
+                        button.classList.remove('d-none');
+                    } else {
+                        button.classList.add('d-none');
+                    }
+                });
+        
+                // Smoothly scroll to the top of the page
+                function scrollToTop() {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            </script>
+        </div>
+
         <!-- JAVASCRIPT FILES -->
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.bundle.min.js"></script>
