@@ -12,7 +12,7 @@
 </head>
 <body class="h-screen bg-gray-100">
   <!-- Main Wrapper -->
-  <div class="h-full">
+  <div class="h-full flex">
     <!-- Left Sidebar -->
     <aside class="w-16 bg-white shadow-md flex flex-col items-center py-4 fixed h-full left-0 top-0">
       <button class="mb-4 p-2">
@@ -26,7 +26,7 @@
     </aside>
 
     <!-- Middle Section -->
-    <main class="ml-16 mr-64 overflow-y-auto h-full px-4">
+    <main class="ml-16 flex-1 overflow-y-auto h-full px-4">
       <!-- Header -->
       <div class=" bg-white shadow-md rounded-lg mb-4">
         <input
@@ -38,236 +38,54 @@
 
       <!-- Category Buttons -->
       <div class="grid grid-cols-4 gap-4 mb-4">
-        <button class="bg-gray-100 p-4 rounded-md shadow">Breakfast</button>
-        <button class="bg-blue-500 text-white p-4 rounded-md shadow">Lunch</button>
-        <button class="bg-gray-100 p-4 rounded-md shadow">Dinner</button>
-        <button class="bg-gray-100 p-4 rounded-md shadow">Soup</button>
-        <button class="bg-gray-100 p-4 rounded-md shadow">Desserts</button>
-        <button class="bg-gray-100 p-4 rounded-md shadow">Side Dish</button>
-        <button class="bg-gray-100 p-4 rounded-md shadow">Appetizer</button>
-        <button class="bg-gray-100 p-4 rounded-md shadow">Beverages</button>
+        <button onclick="showCategory('breakfast', this)" class="category-btn bg-gray-100 p-4 rounded-md shadow">Breakfast</button>
+        <button onclick="showCategory('lunch', this)" class="category-btn bg-gray-100 p-4 rounded-md shadow">Lunch</button>
+        <button onclick="showCategory('dinner', this)" class="category-btn bg-gray-100 p-4 rounded-md shadow">Dinner</button>
+        <button onclick="showCategory('soup', this)" class="category-btn bg-gray-100 p-4 rounded-md shadow">Soup</button>
+        <button onclick="showCategory('desserts', this)" class="category-btn bg-gray-100 p-4 rounded-md shadow">Desserts</button>
+        <button onclick="showCategory('sideDish', this)" class="category-btn bg-gray-100 p-4 rounded-md shadow">Side Dish</button>
+        <button onclick="showCategory('appetizer', this)" class="category-btn bg-gray-100 p-4 rounded-md shadow">Appetizer</button>
+        <button onclick="showCategory('beverages', this)" class="category-btn bg-gray-100 p-4 rounded-md shadow">Beverages</button>
+      </div>
+      
+      <!-- Dynamic Content Container -->
+      <div id="dynamic-content" class="mt-4">
+        <h2 class="text-lg font-bold mb-4">Select a category to view items</h2>
       </div>
 
-      <!-- Lunch Menu -->
-      <h2 class="text-lg font-bold mb-4">Lunch Menu</h2>
-      <div class="grid grid-cols-4 gap-4">
-        <!-- Menu Item -->
-        <div class="bg-white p-4 rounded-md shadow-md">
-          <img
-            src="https://via.placeholder.com/150"
-            alt="Dish"
-            class="w-full h-32 object-cover rounded-md mb-2"
-          />
-          <h3 class="text-sm font-bold">Pasta Bolognese</h3>
-          <p class="text-gray-500 text-xs">Delicious beef lasagna with...</p>
-          <div class="flex justify-between items-center mt-2">
-            <p class="font-bold">₦50.5</p>
-            <div class="flex items-center">
-              <button class="px-2 py-1 bg-gray-200 rounded">-</button>
-              <span class="px-2">2</span>
-              <button class="px-2 py-1 bg-blue-500 text-white rounded">+</button>
-            </div>
-          </div>
-        </div>
-        <div class="bg-white p-4 rounded-md shadow-md">
-          <img
-            src="https://via.placeholder.com/150"
-            alt="Dish"
-            class="w-full h-32 object-cover rounded-md mb-2"
-          />
-          <h3 class="text-sm font-bold">Pasta Bolognese</h3>
-          <p class="text-gray-500 text-xs">Delicious beef lasagna with...</p>
-          <div class="flex justify-between items-center mt-2">
-            <p class="font-bold">₦50.5</p>
-            <div class="flex items-center">
-              <button class="px-2 py-1 bg-gray-200 rounded">-</button>
-              <span class="px-2">2</span>
-              <button class="px-2 py-1 bg-blue-500 text-white rounded">+</button>
-            </div>
-          </div>
-        </div>
-        <div class="bg-white p-4 rounded-md shadow-md">
-          <img
-            src="https://via.placeholder.com/150"
-            alt="Dish"
-            class="w-full h-32 object-cover rounded-md mb-2"
-          />
-          <h3 class="text-sm font-bold">Pasta Bolognese</h3>
-          <p class="text-gray-500 text-xs">Delicious beef lasagna with...</p>
-          <div class="flex justify-between items-center mt-2">
-            <p class="font-bold">₦50.5</p>
-            <div class="flex items-center">
-              <button class="px-2 py-1 bg-gray-200 rounded">-</button>
-              <span class="px-2">2</span>
-              <button class="px-2 py-1 bg-blue-500 text-white rounded">+</button>
-            </div>
-          </div>
-        </div>
-        <div class="bg-white p-4 rounded-md shadow-md">
-          <img
-            src="https://via.placeholder.com/150"
-            alt="Dish"
-            class="w-full h-32 object-cover rounded-md mb-2"
-          />
-          <h3 class="text-sm font-bold">Pasta Bolognese</h3>
-          <p class="text-gray-500 text-xs">Delicious beef lasagna with...</p>
-          <div class="flex justify-between items-center mt-2">
-            <p class="font-bold">₦50.5</p>
-            <div class="flex items-center">
-              <button class="px-2 py-1 bg-gray-200 rounded">-</button>
-              <span class="px-2">2</span>
-              <button class="px-2 py-1 bg-blue-500 text-white rounded">+</button>
-            </div>
-          </div>
-        </div>
-        <div class="bg-white p-4 rounded-md shadow-md">
-          <img
-            src="https://via.placeholder.com/150"
-            alt="Dish"
-            class="w-full h-32 object-cover rounded-md mb-2"
-          />
-          <h3 class="text-sm font-bold">Pasta Bolognese</h3>
-          <p class="text-gray-500 text-xs">Delicious beef lasagna with...</p>
-          <div class="flex justify-between items-center mt-2">
-            <p class="font-bold">₦50.5</p>
-            <div class="flex items-center">
-              <button class="px-2 py-1 bg-gray-200 rounded">-</button>
-              <span class="px-2">2</span>
-              <button class="px-2 py-1 bg-blue-500 text-white rounded">+</button>
-            </div>
-          </div>
-        </div>
-        <div class="bg-white p-4 rounded-md shadow-md">
-          <img
-            src="https://via.placeholder.com/150"
-            alt="Dish"
-            class="w-full h-32 object-cover rounded-md mb-2"
-          />
-          <h3 class="text-sm font-bold">Pasta Bolognese</h3>
-          <p class="text-gray-500 text-xs">Delicious beef lasagna with...</p>
-          <div class="flex justify-between items-center mt-2">
-            <p class="font-bold">₦50.5</p>
-            <div class="flex items-center">
-              <button class="px-2 py-1 bg-gray-200 rounded">-</button>
-              <span class="px-2">2</span>
-              <button class="px-2 py-1 bg-blue-500 text-white rounded">+</button>
-            </div>
-          </div>
-        </div>
-        <div class="bg-white p-4 rounded-md shadow-md">
-          <img
-            src="https://via.placeholder.com/150"
-            alt="Dish"
-            class="w-full h-32 object-cover rounded-md mb-2"
-          />
-          <h3 class="text-sm font-bold">Pasta Bolognese</h3>
-          <p class="text-gray-500 text-xs">Delicious beef lasagna with...</p>
-          <div class="flex justify-between items-center mt-2">
-            <p class="font-bold">₦50.5</p>
-            <div class="flex items-center">
-              <button class="px-2 py-1 bg-gray-200 rounded">-</button>
-              <span class="px-2">2</span>
-              <button class="px-2 py-1 bg-blue-500 text-white rounded">+</button>
-            </div>
-          </div>
-        </div>
-        <div class="bg-white p-4 rounded-md shadow-md">
-          <img
-            src="https://via.placeholder.com/150"
-            alt="Dish"
-            class="w-full h-32 object-cover rounded-md mb-2"
-          />
-          <h3 class="text-sm font-bold">Pasta Bolognese</h3>
-          <p class="text-gray-500 text-xs">Delicious beef lasagna with...</p>
-          <div class="flex justify-between items-center mt-2">
-            <p class="font-bold">₦50.5</p>
-            <div class="flex items-center">
-              <button class="px-2 py-1 bg-gray-200 rounded">-</button>
-              <span class="px-2">2</span>
-              <button class="px-2 py-1 bg-blue-500 text-white rounded">+</button>
-            </div>
-          </div>
-        </div>
-        <div class="bg-white p-4 rounded-md shadow-md">
-          <img
-            src="https://via.placeholder.com/150"
-            alt="Dish"
-            class="w-full h-32 object-cover rounded-md mb-2"
-          />
-          <h3 class="text-sm font-bold">Pasta Bolognese</h3>
-          <p class="text-gray-500 text-xs">Delicious beef lasagna with...</p>
-          <div class="flex justify-between items-center mt-2">
-            <p class="font-bold">₦50.5</p>
-            <div class="flex items-center">
-              <button class="px-2 py-1 bg-gray-200 rounded">-</button>
-              <span class="px-2">2</span>
-              <button class="px-2 py-1 bg-blue-500 text-white rounded">+</button>
-            </div>
-          </div>
-        </div>
-        <div class="bg-white p-4 rounded-md shadow-md">
-          <img
-            src="https://via.placeholder.com/150"
-            alt="Dish"
-            class="w-full h-32 object-cover rounded-md mb-2"
-          />
-          <h3 class="text-sm font-bold">Pasta Bolognese</h3>
-          <p class="text-gray-500 text-xs">Delicious beef lasagna with...</p>
-          <div class="flex justify-between items-center mt-2">
-            <p class="font-bold">₦50.5</p>
-            <div class="flex items-center">
-              <button class="px-2 py-1 bg-gray-200 rounded">-</button>
-              <span class="px-2">2</span>
-              <button class="px-2 py-1 bg-blue-500 text-white rounded">+</button>
-            </div>
-          </div>
-        </div>
-        <div class="bg-white p-4 rounded-md shadow-md flex justify-center items-center">
-          <!-- <img
-            src="https://via.placeholder.com/150"
-            alt="Dish"
-            class="w-full h-32 object-cover rounded-md mb-2"
-          />
-          <h3 class="text-sm font-bold">Pasta Bolognese</h3>
-          <p class="text-gray-500 text-xs">Delicious beef lasagna with...</p>
-          <div class="flex justify-between items-center mt-2">
-            <p class="font-bold">₦50.5</p>
-            <div class="flex items-center">
-              <button class="px-2 py-1 bg-gray-200 rounded">-</button>
-              <span class="px-2">2</span>
-              <button class="px-2 py-1 bg-blue-500 text-white rounded">+</button>
-            </div>
-          </div> -->
-          <a href="#" class="text-blue-500 text-6xl">
-            <i class="bi bi-plus-square-fill"></i>
-          </a>
-        </div>
-        <!-- Add more menu items similarly -->
-      </div>
-    </main>
-
-    <!-- Right Sidebar -->
-    <aside class="w-64 bg-white shadow-md p-4 fixed h-full right-0 top-0">
-      <h3 class="text-lg font-bold mb-4">Invoice</h3>
-      <div class="space-y-4">
-        <div class="flex items-center">
-          <img src="https://via.placeholder.com/50" alt="Dish" class="rounded-md" />
-          <div class="ml-4">
-            <h4 class="font-bold text-sm">Pasta Bolognese</h4>
-            <p class="text-gray-500 text-xs">₦50.5 x 2</p>
-          </div>
-        </div>
-        <!-- Add more invoice items similarly -->
-      </div>
-      <div class="mt-8">
-        <h4 class="font-bold text-sm">Payment</h4>
-        <ul class="space-y-2 text-sm">
-          <li class="flex justify-between"><span>Sub Total</span><span>₦100</span></li>
-          <li class="flex justify-between"><span>Tax</span><span>₦10</span></li>
-          <li class="flex justify-between font-bold"><span>Total</span><span>₦110</span></li>
-        </ul>
-      </div>
-    </aside>
+      <script>
+        // Content for each category
+        const categoryContent = {
+          breakfast: `<h2 class="text-lg font-bold mb-4">Breakfast Menu</h2><p>Delicious breakfast items.</p>`,
+          lunch: `<h2 class="text-lg font-bold mb-4">Lunch Menu</h2><p>Hearty lunch options.</p>`,
+          dinner: `<h2 class="text-lg font-bold mb-4">Dinner Menu</h2><p>Sumptuous dinner dishes.</p>`,
+          soup: `<h2 class="text-lg font-bold mb-4">Soup Menu</h2><p>Warm and comforting soups.</p>`,
+          desserts: `<h2 class="text-lg font-bold mb-4">Desserts Menu</h2><p>Sweet treats and desserts.</p>`,
+          sideDish: `<h2 class="text-lg font-bold mb-4">Side Dish Menu</h2><p>Perfect sides for your meal.</p>`,
+          appetizer: `<h2 class="text-lg font-bold mb-4">Appetizer Menu</h2><p>Tasty appetizers to start with.</p>`,
+          beverages: `<h2 class="text-lg font-bold mb-4">Beverages Menu</h2><p>Refreshing drinks and beverages.</p>`,
+        };
+      
+        // Function to display the category content and highlight the active button
+        function showCategory(category, button) {
+          // Update the content
+          const container = document.getElementById('dynamic-content');
+          container.innerHTML = categoryContent[category] || '<p>Content not available</p>';
+      
+          // Highlight the clicked button
+          const buttons = document.querySelectorAll('.category-btn'); // Select all buttons
+          buttons.forEach((btn) => {
+            btn.classList.remove('bg-blue-500', 'text-white'); // Remove active classes
+            btn.classList.add('bg-gray-100'); // Reset to default
+          });
+      
+          // Add active class to the clicked button
+          button.classList.remove('bg-gray-100');
+          button.classList.add('bg-blue-500', 'text-white');
+        }
+      </script>
+      
+      
   </div>
 </body>
 </html>
